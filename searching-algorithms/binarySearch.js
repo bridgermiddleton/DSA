@@ -6,6 +6,8 @@
     //If the value is too small, move the left pointer up to where the middle is
     //If the value is too big, move the right pointer down to where the middle is
     //If the value is never found, return -1
+    //Big O(logn)
+
 
 
 function binarySearch(arr, val) {
