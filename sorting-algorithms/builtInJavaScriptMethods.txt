@@ -1,0 +1,19 @@
+JavaScript .sort()
+
+- sorts by the Unicode of each element in the array
+- converts the element into its respective unicode and then sorts via this
+- really only works with strings and still sometimes doesn't works
+- however, this function accepts an optional parameter called a "comparator" function that tells JS how we want it to sort
+- let's say we put in a pair of numbers (a and b), JS determines the sort based on their return value
+    - if it returns a negative number, a should come before b
+    - if it returns a positive number, b should come before a
+    - if it returns 0, they are viewed as the same (e.g. a === b)
+
+
+example functionality:
+
+function numberCompare(a, b) {
+    return num1 - num2
+}
+
+[5, 2, 3, 1].sort(numberCompare) -> [1, 2, 3, 5]
