@@ -1,0 +1,108 @@
+Data Structures
+
+    What Do They Do?
+        Data structures are collections of values, the relationships among them, and the functions or operations that can be applied
+        to the data
+
+    Why So Many?
+        Different data structures excel at different things.  Some are highly specialized, while otheres (like arrays)
+        are more generally used.
+
+    Why Care?
+        The more time you spend as a developer, the more likely you'll need to use one of these data structures
+
+    Which Is Best?
+        There is no best.  They all excel in different situations.
+
+        Working with map/location data (e.g. Google Maps), use a graph!
+
+        Need an ordered list with fast inserts/removals at the beginning and end, use a linked list!
+
+
+
+
+    ES2015 Class Syntax Overview
+
+        What is a class?
+            A blueprint for creating objects with pre-defined properties and methods
+            JS doesn't really have them...
+
+        We're going to implement data structures as classes
+
+
+        The Syntax
+
+            class Student {
+                constructor(firstName, lastName) {
+                    this.firstName = firstName;
+                    this.lastName = lastName;
+                }
+            }
+
+
+            - the method to create new objects must be called constructor
+            - the class keyword creates a constant, so you can not redefine it.  Watch out for
+              the syntax as well!
+
+        Creating Objects from classes
+
+            - we use the "new" keyword
+
+
+            let firstStudent = new Student("Colt", "Steele");
+            let secondStudent = new Student("Deez", "Nutz");
+            
+            - "this" refers to the individual instance of the class (e.g. firstStudent, secondStudent)
+
+        Instance Methods
+
+            class Student {
+                constructor(firstName, lastName) {
+                    this.firstName = firstName;
+                    this.lastName = lastName;
+                }
+                //Instance method example
+                fullName(){
+                    return `Your full name is ${this.firstName} ${this.lastName}`;
+                }
+            }
+
+            let firstStudent = new Student("Colt", "Steele");
+
+            firstStudent.fullName();
+
+            - method specific to the class
+            - e.g. an array's push() or pop() methods
+
+        Class Methods
+
+            - static key word in front of a method definition
+            - not that common
+            - often used to create utility functions for an entire class
+            - not related to a single instance, rather the entire class
+
+
+            class Student {
+                constructor(firstName, lastName) {
+                    this.firstName = firstName;
+                    this.lastName = lastName;
+                }
+                //Instance method example
+                fullName(){
+                    return `Your full name is ${this.firstName} ${this.lastName}`;
+                }
+
+                static enrollStudents(...students) {
+                    //maybe send an email here
+                }
+            }
+
+            let firstStudent = new Student("Colt", "Steele");
+            let secondStudent = new Student("Deez", "Nutz");
+            Student.enrollStudents([firstStudent, secondStudent]);
+
+
+            - better example is the Point class example, where you use a class method to calculate
+              the distance between two points.  It's a utility function for the class essentially.
+
+
